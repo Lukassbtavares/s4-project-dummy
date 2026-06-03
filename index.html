@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyclist Dummy &amp; Mock Bike — S4 Engineering Project</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="dot"></span>
+    <b>CORDS&nbsp;·&nbsp;VTS</b><span>/ cyclist target</span>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="#overview" data-sec="overview">Overview</a>
+    <a href="#requirements" data-sec="requirements">Requirements</a>
+    <a href="#dummy" data-sec="dummy">Dummy</a>
+    <a href="#bike" data-sec="bike">Bicycle</a>
+    <a href="#electrical" data-sec="electrical">Electrical</a>
+    <a href="#testing" data-sec="testing">Testing</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">≡</button>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <span class="bar"></span>
+        <span class="eyebrow">S4 Project · ADAS Vulnerable-Road-User Target</span>
+      </div>
+      <h1>A crash-ready<br>cyclist <span class="blue">dummy</span><br>&amp; mock bike.</h1>
+      <p class="hero-lead">A low-cost, modular cyclist target rebuilt from the ground up — durable enough to take repeated vehicle impacts, light enough to stay under 30&nbsp;kg, and detectable by LiDAR, radar and vision systems.</p>
+      <div class="hero-meta">
+        <div>SCOPE<b>Dummy + bicycle redesign</b></div>
+        <div>METHOD<b>EVA foam · PVC · PLA · servos</b></div>
+        <div>STANDARD<b>NEN-ISO 19206-4</b></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <img src="assets/image9.jpg" alt="The assembled cyclist dummy posed in a walking stride on its test stand">
+        <span class="hero-tag t1">EVA foam body<span class="lead"></span></span>
+        <span class="hero-tag t2"><span class="lead"></span>servo shoulder</span>
+        <span class="hero-tag t3">PVC frame<span class="lead"></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>scroll</span><span class="ln"></span></div>
+</header>
+
+<!-- ============================ OVERVIEW ============================ -->
+<section class="sec" id="overview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">01 / Orientation</span>
+      <h2>Rebuilding a target that survives the hit.</h2>
+      <p>Earlier student teams at HAN proved a low-cost vulnerable-road-user dummy was feasible — but the joints were fragile and the bicycle couldn't reliably hold the dummy up. This project re-engineers both.</p>
+    </div>
+
+    <div class="stats reveal" id="statStrip">
+      <div class="stat"><div class="num" data-count="30"><span class="u">kg max</span></div><div class="lab">Combined weight cap</div></div>
+      <div class="stat"><div class="num" data-count="3"><span class="u">motors</span></div><div class="lab">Servo-driven, no gearbox</div></div>
+      <div class="stat"><div class="num" data-count="11"><span class="u">joints</span></div><div class="lab">Bicycle joints redesigned</div></div>
+      <div class="stat"><div class="num" data-count="2"><span class="u">sensors</span></div><div class="lab">LiDAR + radar detectable</div></div>
+    </div>
+
+    <div class="two-col gap-lg" style="margin-top:72px;">
+      <div class="body-col reveal">
+        <p>Advanced Driver Assistance Systems rely on accurately detecting <strong>vulnerable road users</strong> — cyclists and pedestrians. To validate them safely and repeatedly, physical dummy targets stand in for real people during testing.</p>
+        <p>Commercial VRU dummies are expensive and not built to survive multiple impacts, making them impractical for a student or research setting. This project delivers an accessible alternative.</p>
+      </div>
+      <div class="body-col reveal">
+        <p>Work runs under two linked sub-projects: <strong>Project&nbsp;279</strong>, a static cyclist configuration, and <strong>Project&nbsp;276 (CORDS-VTS)</strong>, a dynamic dummy that mimics realistic pedestrian and cyclist motion.</p>
+        <p>The goal across both: a system that is <strong>modular, lightweight, sensor-detectable, and robust</strong> enough for repeated use in ADAS testing scenarios.</p>
+        <div class="kv-row">
+          <span class="kv">Project <b>279</b> · static</span>
+          <span class="kv">Project <b>276</b> · dynamic</span>
+          <span class="kv">Client <b>HAN</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REQUIREMENTS ============================ -->
+<section class="sec" id="requirements">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">02 / Program of Requirements</span>
+      <h2>Scoped with MoSCoW.</h2>
+      <p>Requirements were prioritised into <em>must&nbsp;have</em>, <em>should&nbsp;have</em>, and <em>could&nbsp;have</em> — the contract the final system is measured against.</p>
+    </div>
+
+    <div class="req-grid reveal">
+      <div class="req"><span class="badge must">MUST</span><p>Mimic realistic human motion — specifically walking and bicycle riding.</p></div>
+      <div class="req"><span class="badge must">MUST</span><p>Withstand multiple vehicle impacts without causing damage to the vehicle.</p></div>
+      <div class="req"><span class="badge must">MUST</span><p>Be detectable by automotive sensor systems, including LiDAR and radar.</p></div>
+      <div class="req"><span class="badge must">MUST</span><p>The head shall be recognisable as a human face by vision-based detection.</p></div>
+      <div class="req"><span class="badge must">MUST</span><p>Total combined weight of bicycle and dummy shall not exceed 30&nbsp;kg.</p></div>
+      <div class="req"><span class="badge must">MUST</span><p>Be capable of interfacing with the designated testing platform.</p></div>
+      <div class="req"><span class="badge should">SHOULD</span><p>Be modular, allowing configuration adjustments and future improvements.</p></div>
+      <div class="req"><span class="badge should">SHOULD</span><p>Allow easy assembly, disassembly, and replacement of individual components.</p></div>
+      <div class="req"><span class="badge could">COULD</span><p>Include a detachable battery for flexible power management and maintenance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DUMMY ============================ -->
+<section class="sec" id="dummy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">03 / The Dummy</span>
+      <h2>A simplified human, built to be replaced.</h2>
+      <p>Not anatomically detailed — instead focused on body geometry, joint articulation, and ease of assembly, so it can be posed realistically and rebuilt fast after an impact.</p>
+    </div>
+
+    <div class="split gap-lg reveal" style="margin-bottom:88px;">
+      <div class="body-col">
+        <p>The dummy combines three material systems: <strong>EVA foam</strong> body panels for the outer shape, a <strong>PVC internal frame</strong> for stiffness and alignment, and <strong>3D-printed PLA connectors</strong> that form the movable joints.</p>
+        <p>Most body sections move within a limited angle range; the neck and ankles stay fixed. That's enough to position the dummy in a believable human posture without over-complicating the structure.</p>
+        <div class="kv-row">
+          <span class="kv"><b>EVA</b> foam panels</span>
+          <span class="kv"><b>PVC</b> internal frame</span>
+          <span class="kv"><b>PLA</b> printed joints</span>
+        </div>
+      </div>
+      <div class="plate" data-lb="d-concept">
+        <div class="plate-bar"><span class="id">FIG&nbsp;01</span><span>CAD concept model</span><span class="dots"><i></i><i></i><i></i></span></div>
+        <div class="plate-img cad" data-src="assets/image1.jpeg" data-cap="Fig 01 — Initial conceptual design of the dummy model in CAD"><img src="assets/image1.jpeg" alt="CAD render of the dummy concept showing joint articulation points"><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg></span></div>
+        <div class="plate-cap"><b>Fig 01</b> — Conceptual dummy with articulated joints, modelled in CAD.</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:40px;">
+      <span class="section-index">3A.1 — REALIZATION · THREE PRODUCTION METHODS</span>
+    </div>
+    <div class="steps reveal" style="margin-bottom:56px;">
+      <div class="step">
+        <span class="ic mono">01</span>
+        <span class="n">LASER CUT</span>
+        <h4>EVA foam panels</h4>
+        <p>Panel shapes were laid out digitally, then laser-cut from a large foam mat. The challenge: forming flat panels into a 3D body shape, where small size or position errors change the final look.</p>
+      </div>
+      <div class="step">
+        <span class="ic mono">02</span>
+        <span class="n">FDM PRINT</span>
+        <h4>PLA connectors</h4>
+        <p>Joints and connectors were printed in PLA, oriented with supports for the complex shapes. Print tolerances meant parts needed manual checking and small fitting adjustments before assembly.</p>
+      </div>
+      <div class="step">
+        <span class="ic mono">03</span>
+        <span class="n">CUT + THREAD</span>
+        <h4>PVC internal frame</h4>
+        <p>PVC pipes define the body layout and support the foam panels. Foam was positioned around the frame and locked together by the printed joints — clearest in the leg section.</p>
+      </div>
+    </div>
+
+    <div class="gallery reveal" id="dummyGallery" style="margin-bottom:24px;">
+      <div class="g-item" data-src="assets/image4.png" data-cap="Fig 5.3 — Laser cutting layout for the EVA foam body panels"><img src="assets/image4.png" alt="Laser cutting layout"><span class="tag">LASER LAYOUT</span></div>
+      <div class="g-item" data-src="assets/image3.png" data-cap="Fig 5.4 — Laser-cut EVA foam parts"><img src="assets/image3.png" alt="Laser-cut foam parts"><span class="tag">FOAM PARTS</span></div>
+      <div class="g-item" data-src="assets/image5.jpeg" data-cap="Fig 5.5 — PLA joint components prepared for 3D printing in slicing software"><img src="assets/image5.jpeg" alt="Slicing software"><span class="tag">SLICING</span></div>
+      <div class="g-item" data-src="assets/image6.png" data-cap="Fig 5.6 — Manufactured PLA connector"><img src="assets/image6.png" alt="PLA connector"><span class="tag">PLA CONNECTOR</span></div>
+      <div class="g-item" data-src="assets/image7.png" data-cap="Fig 5.7 — Partial leg assembly: EVA foam, PVC frame and printed joint"><img src="assets/image7.png" alt="Leg assembly"><span class="tag">LEG ASSEMBLY</span></div>
+      <div class="g-item" data-src="assets/image2.jpeg" data-cap="Fig 02 — The dummy with outer clothing fitted"><img src="assets/image2.jpeg" alt="Dressed dummy"><span class="tag">CLOTHED</span></div>
+      <div class="g-item" data-src="assets/image8.jpeg" data-cap="Fig 6.2 — Assembly fit check of the hip section and internal pipe connection"><img src="assets/image8.jpeg" alt="Hip section fit check"><span class="tag">HIP FIT</span></div>
+      <div class="g-item" data-src="assets/image9.jpg" data-cap="Fig 6.1 — The dummy positioned in a human-like walking posture"><img src="assets/image9.jpg" alt="Posed dummy"><span class="tag">POSED</span></div>
+    </div>
+    <p class="mono" style="font-size:12px;color:var(--mute);">↳ click any plate to enlarge · 8 figures</p>
+  </div>
+</section>
+
+<!-- ============================ BIKE ============================ -->
+<section class="sec" id="bike">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">04 / The Bicycle</span>
+      <h2>One big problem: the joints kept breaking.</h2>
+      <p>The previous bicycle's 3D-printed joints weren't sturdy. The fix was a single principle change — and it touched all eleven joints.</p>
+    </div>
+
+    <!-- before / after -->
+    <div class="compare reveal" style="margin-bottom:80px;">
+      <div class="side old">
+        <div class="lab">✕ Previous design</div>
+        <h4>Printed part inserts <em>inside</em> the tube</h4>
+        <p>A thin, weak wall of plastic sat inside each PVC tube. On impact it fractured frequently — the joints were the failure point.</p>
+      </div>
+      <div class="mid"><span class="arrow mono">→</span></div>
+      <div class="side new">
+        <div class="lab">✓ Redesign</div>
+        <h4>Printed part clamps <em>over</em> the tube</h4>
+        <p>Wrapping the 19&nbsp;mm tube outside-in carries load through a thicker, continuous wall. Internal stops prevent axial sliding; fillets cut stress and impact damage.</p>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE JOINT MAP -->
+    <div class="reveal" style="margin-bottom:34px;">
+      <span class="section-index">4B.2 — INTERACTIVE JOINT MAP · 8 KEY CONNECTIONS</span>
+    </div>
+    <div class="jointmap reveal">
+      <div class="jm-stage">
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="jm-img" id="jmImg">
+          <img src="assets/bike_blueprint.png" alt="Blueprint diagram of the bicycle with selectable joints">
+          <!-- hotspots injected by JS -->
+        </div>
+      </div>
+      <div class="jm-panel">
+        <div class="ph">
+          <span class="jid" id="jmId">J1</span>
+          <span class="count" id="jmCount">01 / 08</span>
+        </div>
+        <div class="jm-body" id="jmBody"><!-- filled by JS --></div>
+      </div>
+    </div>
+    <p class="jm-hint">↳ click a glowing node on the frame to inspect each joint redesign</p>
+
+    <!-- bearing + shear pin -->
+    <div class="split gap-lg reveal" style="margin-top:96px;">
+      <div class="plate" data-lb="shear">
+        <div class="plate-bar"><span class="id">FIG&nbsp;13</span><span>Shear-pin geometry</span><span class="dots"><i></i><i></i><i></i></span></div>
+        <div class="plate-img cad" data-src="assets/image14.png" data-cap="Fig 14 — Stepped shear pin (4 mm / 2.5 mm), manufactured"><img src="assets/image14.png" alt="Shear pin"><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg></span></div>
+        <div class="plate-cap"><b>Fig 14</b> — The stepped breaking-pin: 4&nbsp;mm in the larger section, 2.5&nbsp;mm in the smaller.</div>
+      </div>
+      <div class="body-col">
+        <h3 style="font-size:26px;margin-bottom:18px;">Bearings &amp; a designed-to-break pin</h3>
+        <p>The front (<strong>J2</strong>) and rear (<strong>J8</strong>) wheel joints each house a driving servo on one side and a <strong>bearing assembly</strong> on the other — so each wheel is supported yet free to spin, driven from a single side.</p>
+        <p>A <strong>shear-pin</strong> is the safety valve: dimensioned to fracture under excessive shear — like a vehicle impact — releasing the wheel rather than dumping the full load into the frame or the car.</p>
+        <p>The pin diameter was deliberately increased after the first iteration: small printed pins varied too much between prints. The larger stepped pin gives a repeatable fit while still failing in a controlled way.</p>
+      </div>
+    </div>
+
+    <!-- servo drive -->
+    <div class="reveal" style="margin-top:96px;margin-bottom:34px;">
+      <span class="section-index">4B.4 — SERVO DRIVE · THREE INDEPENDENT MOTORS</span>
+    </div>
+    <div class="three-col reveal">
+      <div class="step"><span class="n">MOTOR 1</span><h4>Front wheel</h4><p>Drives the front wheel directly through its J2 housing — no gearbox in the path.</p></div>
+      <div class="step"><span class="n">MOTOR 2</span><h4>Rear wheel</h4><p>Drives the rear wheel via J8, independently controllable in rotation and velocity.</p></div>
+      <div class="step"><span class="n">MOTOR 3</span><h4>Dummy pedalling</h4><p>Actuates the mounted dummy, producing leg/pedal motion synced to the wheels.</p></div>
+    </div>
+    <div class="body-col reveal" style="max-width:760px;margin-top:36px;">
+      <p>Three independent servos replace a geared drivetrain entirely — cutting weight, simplifying maintenance, and giving each driven part its own rotation and velocity. The configuration was confirmed with the client and recommended by Jan&nbsp;Benders. Servo housings use a clearance fit with a rear access hole, after an early version trapped the servo too tightly.</p>
+    </div>
+
+    <!-- materials table -->
+    <div class="reveal" style="margin-top:80px;">
+      <span class="section-index" style="display:block;margin-bottom:24px;">4B.5 — MATERIALS OVERVIEW</span>
+      <table class="spec">
+        <thead><tr><th>Component</th><th>Material / part</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td>Frame tubes</td><td class="mono">PVC pipe · 19 mm OD</td><td>Lightweight, low-cost, easy to shape</td></tr>
+          <tr><td>Joints / connectors</td><td class="mono">PLA · FDM printed</td><td>Complex geometries, cheap to manufacture</td></tr>
+          <tr><td>Wheel bearings (J2, J8)</td><td class="mono">Bearing assembly</td><td>Allows free wheel rotation</td></tr>
+          <tr><td>Shear pins (J2, J8)</td><td class="mono">PLA · stepped 4 / 2.5 mm</td><td>Fractures on impact to protect frame &amp; vehicle</td></tr>
+          <tr><td>Drive</td><td class="mono">3 × servo motor</td><td>Front wheel, rear wheel, dummy actuation</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- iteration timeline -->
+    <div class="split gap-lg reveal" style="margin-top:96px;align-items:start;">
+      <div>
+        <span class="section-index" style="display:block;margin-bottom:24px;">JOINT ITERATION · SELECTED MILESTONES</span>
+        <div class="timeline">
+          <div class="tl-item"><div class="v">J2 · v1 → v2</div><h4>Servo that wouldn't come out</h4><p>V1 tolerances were so tight the servo went in but not out — saws and pliers required. V2 fits cleanly and needs zero support.</p></div>
+          <div class="tl-item"><div class="v">J5 · ×4 breaks</div><h4>Clamp force vs. release</h4><p>The handlebar joint broke ~four times finding the right opening angle. The final version is smoothed, support-free, and stress-tested by repeated insertion.</p></div>
+          <div class="tl-item"><div class="v">J7 · in → over</div><h4>Lower frame, re-walled</h4><p>Switched from inside-tube to over-tube connections after seeing prior groups' parts fail. Fillets added to avoid scratching on impact.</p></div>
+          <div class="tl-item"><div class="v">J8 · v1 → v3</div><h4>Bigger pins, more clearance</h4><p>Breaking pins enlarged for print repeatability; servo clearance opened and a rear removal hole added.</p></div>
+        </div>
+      </div>
+      <div class="plate" data-lb="iter">
+        <div class="plate-bar"><span class="id">FIG&nbsp;17</span><span>J1 — wheel hub, section</span><span class="dots"><i></i><i></i><i></i></span></div>
+        <div class="plate-img cad" data-src="assets/image17.png" data-cap="Fig 06 — Section view of the front wheel hub connection"><img src="assets/image17.png" alt="Section view of wheel hub"><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg></span></div>
+        <div class="plate-cap"><b>Fig 06</b> — Section view of the wheel-hub connection. Spokes moved to centre; hub diameter increased.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ELECTRICAL ============================ -->
+<section class="sec" id="electrical">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">05 / Electrical Design</span>
+      <h2>One controller, two motor chains.</h2>
+      <p>A central microcontroller drives a motor shield feeding two chains — two motors for the bike's wheels, four for the dummy's shoulders and hips — off a shared DC supply with separated motor and logic rails.</p>
+    </div>
+
+    <div class="split gap-lg reveal">
+      <div class="plate" data-lb="mcu">
+        <div class="plate-bar"><span class="id">FIG&nbsp;10</span><span>Olimexino STM32F3</span><span class="dots"><i></i><i></i><i></i></span></div>
+        <div class="plate-img cad" data-src="assets/image10.png" data-cap="Fig 10 — Olimexino STM32F3 microcontroller"><img src="assets/image10.png" alt="Olimexino microcontroller board"><span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg></span></div>
+        <div class="plate-cap"><b>Fig 10</b> — Olimexino STM32F3: Arduino-compatible, with more headroom.</div>
+      </div>
+      <div>
+        <div class="step" style="margin-bottom:16px;"><span class="n">7A · CONTROLLER</span><h4>Olimexino STM32F3</h4><p>Chosen with the client for more computing power and accessibility than an Arduino — while staying Arduino-compatible, so an Arduino can be substituted if needed.</p></div>
+        <div class="step" style="margin-bottom:16px;"><span class="n">7B · SHIELD</span><h4>OpenCM 485 EXP</h4><p>The intermediary that lets the controller talk to the Dynamixel motors. Mounted via cables; legacy connector housings are best swapped for modern ones.</p></div>
+        <div class="step"><span class="n">7C · SERVOS</span><h4>Dynamixel motors</h4><p>Client-selected for strong performance per euro — high torque for the price, plus a ready Dynamixel software library.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTING ============================ -->
+<section class="sec" id="testing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">06 / Testing</span>
+      <h2>Does it fit, and does it move?</h2>
+      <p>Two checks on the dummy: can the EVA foam, PVC frame and PLA connectors be assembled as intended — and can the joints be posed into a realistic human stance.</p>
+    </div>
+
+    <div class="two-col gap-lg reveal">
+      <div>
+        <span class="section-index" style="display:block;margin-bottom:20px;">TABLE 6.1 — ASSEMBLY FIT TEST</span>
+        <table class="spec">
+          <tbody>
+            <tr><td>EVA foam ↔ PVC frame</td><td>Foam panels seat around the pipe structure</td><td class="res warn">minor adj.</td></tr>
+            <tr><td>PVC pipe ↔ PLA connector</td><td>Some fittings tight or slightly misaligned</td><td class="res warn">corrected</td></tr>
+            <tr><td>Body-section alignment</td><td>Leg section kept its shape after fitting</td><td class="res">acceptable</td></tr>
+            <tr><td>Assembly accessibility</td><td>Parts checked &amp; adjusted by hand</td><td class="res">acceptable</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <span class="section-index" style="display:block;margin-bottom:20px;">TABLE 6.2 — JOINT MOVEMENT TEST</span>
+        <table class="spec">
+          <tbody>
+            <tr><td>Shoulders</td><td>Manual rotation / positioning</td><td class="res">movable</td></tr>
+            <tr><td>Elbows</td><td>Manual bending / positioning</td><td class="res">movable</td></tr>
+            <tr><td>Hips</td><td>Manual rotation / positioning</td><td class="res">movable</td></tr>
+            <tr><td>Knees</td><td>Manual bending / positioning</td><td class="res">movable</td></tr>
+            <tr><td>Neck</td><td>Checked as fixed connection</td><td class="res">fixed ✓</td></tr>
+            <tr><td>Ankles</td><td>Checked as fixed connection</td><td class="res">fixed ✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="body-col reveal" style="max-width:820px;margin-top:64px;">
+      <p class="lede">The components assemble and pose as designed. Small manual corrections were needed for print, cut and threading tolerances — but none prevented the dummy from meeting its purpose. The concept is ready for further integration with the bicycle and the testing platform.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>A practical, low-cost VRU target.</h3>
+        <p>Modular construction means individual parts — joints, servos, pins, foam panels — can be swapped independently, making the system suitable for ongoing development, integration and repeated impact testing.</p>
+      </div>
+      <div class="col">
+        <h5>Sections</h5>
+        <a href="#overview">Overview</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#dummy">Dummy</a>
+        <a href="#bike">Bicycle</a>
+        <a href="#electrical">Electrical</a>
+        <a href="#testing">Testing</a>
+      </div>
+      <div class="col">
+        <h5>Reference</h5>
+        <div>NEN-ISO 19206-4:2020</div>
+        <div>Project 279 · static</div>
+        <div>Project 276 · CORDS-VTS</div>
+        <div>EVA · PVC · PLA · servo</div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>S4 REPORT — BICYCLE &amp; DUMMY</span>
+      <span>ADAS · VULNERABLE ROAD USER TARGET</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ LIGHTBOX ============================ -->
+<div class="lb" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev">‹</button>
+    <button class="lb-nav lb-next" id="lbNext">›</button>
+    <img id="lbImg" alt="Enlarged figure">
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
